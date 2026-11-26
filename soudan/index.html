@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>酒寄家の課題相談室</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#f6f4f0">
+<script>
+  // 開く先（claude.ai のアーティファクト）
+  var ROOM = 'https://claude.ai/artifact/KBud68PrxuC3BMgDytwcyv';
+  // ホーム画面のアイコンから開いたときは、すぐ開く先へ
+  if (/[?&]app=1/.test(location.search) || (window.matchMedia && matchMedia('(display-mode: standalone)').matches)) {
+    location.replace(ROOM);
+  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
+</script>
+<style>
+  :root{--paper:#f6f4f0;--sheet:#fffdf9;--ink:#22201d;--mute:#6c675f;--rule:#dcd6cc}
+  @media (prefers-color-scheme:dark){:root{--paper:#161514;--sheet:#1e1c1a;--ink:#ebe6dd;--mute:#a39d93;--rule:#38342f}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Yu Gothic UI","Noto Sans JP",system-ui,sans-serif;line-height:1.8}
+  main{max-width:30rem;margin:0 auto;padding:2rem max(16px,env(safe-area-inset-right)) 3rem max(16px,env(safe-area-inset-left));display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
+  img{width:9rem;height:9rem;border-radius:1.6rem;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+  h1{font-size:1.3rem;margin:.3rem 0 0;letter-spacing:.06em}
+  ol{text-align:left;background:var(--sheet);border:1px solid var(--rule);border-radius:.6rem;padding:.8rem 1rem .8rem 2rem;margin:0;font-size:.92rem}
+  a.go{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;padding:.7rem 1.4rem;border-radius:.6rem}
+  p{margin:0;color:var(--mute);font-size:.85rem}
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="課題相談室のアイコン">
+  <h1>酒寄家の課題相談室</h1>
+  <ol>
+    <li>Chrome の右上の「︙」を開く</li>
+    <li>「ホーム画面に追加」または「アプリをインストール」を選ぶ</li>
+    <li>三人のアイコンで追加される。次からはそのアイコンを押すと課題相談室が開く</li>
+  </ol>
+  <a class="go" id="go" href="https://claude.ai/artifact/KBud68PrxuC3BMgDytwcyv">いますぐ課題相談室を開く</a>
+  <p>相談室は Claude にログインした状態で使えます。</p>
+</main>
+</body>
+</html>
